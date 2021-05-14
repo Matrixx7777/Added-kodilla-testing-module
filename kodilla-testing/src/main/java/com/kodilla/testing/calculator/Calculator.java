@@ -17,14 +17,18 @@ public class Calculator {
         return b;
     }
 
-    public void Adding(){
-        if(a<b || a<b){
-            int equalsAdding = a + b;
-            System.out.println("Result added = " + equalsAdding);
+    public void adding(){
+        if(a<b){
+            int equalsAdding1 = a + b;
+            System.out.println("Result added = " + equalsAdding1);
+        }
+        else if(b<a){
+            int equalsAdding2 = a + b;
+            System.out.println("Result added = " + equalsAdding2);
         }
     }
 
-    public void Substract(){
+    public void substract(){
         if(a>b){
             int equalsSubstract1 = a - b;
             System.out.println("Result subtracted = " + equalsSubstract1);

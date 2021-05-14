@@ -18,8 +18,8 @@ public class TestingMain {
         System.out.println("\n" + "NEXT TEST: " + "\n");
 
         Calculator calculator = new Calculator(10,17);
-        calculator.Adding();
-        calculator.Substract();
+        calculator.adding();
+        calculator.substract();
 
         int result2 = calculator.getA();
         int result3 = calculator.getB();
