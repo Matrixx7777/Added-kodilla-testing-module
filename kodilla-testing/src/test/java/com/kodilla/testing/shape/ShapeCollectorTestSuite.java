@@ -17,7 +17,7 @@ public class ShapeCollectorTestSuite {
 
             //Given
             ShapeCollector collector = new ShapeCollector();
-            Circle circle = new Circle("Circle", 13.7);
+            Circle circle = new Circle("Circle1", 13.7);
             //When
             collector.addFigure(circle);
 
