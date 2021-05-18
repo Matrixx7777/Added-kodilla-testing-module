@@ -13,6 +13,7 @@ import static org.mockito.Mockito.when;
 
 public class WeatherForecastTestSuite {
 
+    //Mock
     @Test
     void testCalculateForecastWithMock() {
         //Given

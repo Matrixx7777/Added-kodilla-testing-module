@@ -1,7 +1,6 @@
 package com.kodilla.testing.weather.stub;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WeatherForecast {
     private Temperatures temperatures;
@@ -16,15 +15,14 @@ public class WeatherForecast {
         for (Map.Entry<String, Double> temperature :
                 temperatures.getTemperatures().entrySet()) {
 
-            // adding 1 celsius degree to current value
-            // as a temporary weather forecast
+            // adding 1 celsius degree to current value.
+            // as a temporary weather forecast.
             resultMap.put(temperature.getKey(), temperature.getValue() + 1.0);
         }
         return resultMap;
     }
 
     public double averageValueTemperatures() {
-        Map<String, Double> averageValue = new HashMap<>();
 
         double sum = 0;
         for (Map.Entry<String, Double> temperature :
@@ -33,30 +31,31 @@ public class WeatherForecast {
             sum += temperature.getValue();
 
         }
-        sum = sum / averageValue.size();
 
-        return sum;
+        return sum / temperatures.getTemperatures().size();
     }
 
-//    public double medianaOfTemperatures() {
-//        Map<String, Double> medianaMap = new HashMap<>();
-//
-//        double mediana=0;
-//        double average = 0.0;
-//        Arrays.sort(medianaMap.values().toArray(new Double[0]));
-//
-//        if (medianaMap.size() % 2 == 0 )
-//        {
-//            average = medianaMap[medianaMap.size()/2] + medianaMap[(medianaMap.size()/2)-1];
-//
-//            mediana = average/2.0;
-//
-//        }
-//        else
-//        {
-//            mediana = medianaMap[medianaMap.size()/2];
-//        }
-//
-//        return mediana;
-//    }
+    public double medianOfTemperatures() {
+
+        double median=0;
+
+        List<Double> temperaturesArray = new ArrayList<>();
+
+
+        for (Map.Entry<String, Double> temperature :
+                temperatures.getTemperatures().entrySet()) {
+
+            temperaturesArray.add(temperature.getValue());
+        }
+
+        Collections.sort(temperaturesArray);
+
+        if(temperaturesArray.size() % 2 == 0){
+            median = (temperaturesArray.get((temperaturesArray.size()/2)-1) + temperaturesArray.get((temperaturesArray.size()/2)-1));
+        }
+        else{
+            median = temperaturesArray.get(((temperaturesArray.size()+1)/2)-1);
+        }
+        return median;
+    }
 }

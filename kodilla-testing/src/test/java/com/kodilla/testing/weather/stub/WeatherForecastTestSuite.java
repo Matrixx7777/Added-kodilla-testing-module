@@ -19,19 +19,33 @@ public class WeatherForecastTestSuite {
         Assertions.assertEquals(5, quantityOfSensors);
     }
 
-
-    @BeforeEach@Test
-    void testAverageValueForecastWithStub(){
+    @BeforeEach
+    @Test
+    void testAverageValueTemperatures() {
         //Given
         Temperatures temperatures = new TemperaturesStub();
         WeatherForecast weatherForecast = new WeatherForecast(temperatures);
 
         //When
-        double a1 =weatherForecast.averageValueTemperatures();
+        double a1 = weatherForecast.averageValueTemperatures();
 
         //Then
-        Assertions.assertEquals(5,a1);
+        Assertions.assertEquals(25.56, a1);
     }
 
+
+    @BeforeEach
+    @Test
+    void testMedianOfTemperatures() {
+        //Given
+        Temperatures temperatures = new TemperaturesStub();
+        WeatherForecast weatherForecast = new WeatherForecast(temperatures);
+
+        //When
+        double a1 = weatherForecast.medianOfTemperatures();
+
+        //Then
+        Assertions.assertEquals(25.5, a1);
+    }
 
 }

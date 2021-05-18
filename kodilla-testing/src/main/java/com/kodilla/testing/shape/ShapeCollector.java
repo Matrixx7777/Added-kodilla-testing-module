@@ -30,9 +30,9 @@ public class ShapeCollector {
 
     }
 
-    public Shape showFigures(int a){
+    public String showFigures(){
 
-            return list.get(a);
+            return list.toString();
 
     }
 

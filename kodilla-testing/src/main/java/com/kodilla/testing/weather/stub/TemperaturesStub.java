@@ -8,7 +8,7 @@ public class TemperaturesStub implements Temperatures {
     public Map<String, Double> getTemperatures() {
         Map<String, Double> stubResult = new HashMap<>();
 
-        // dummy data
+        // dummy data .
         stubResult.put("Rzeszow", 25.5);
         stubResult.put("Krakow", 26.2);
         stubResult.put("Wroclaw", 24.8);

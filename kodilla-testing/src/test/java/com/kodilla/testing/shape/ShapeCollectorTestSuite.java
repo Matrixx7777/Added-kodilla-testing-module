@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 public class ShapeCollectorTestSuite {
 
 
@@ -60,8 +62,9 @@ public class ShapeCollectorTestSuite {
         collector.addFigure(triangle2);
         collector.addFigure(triangle3);
         //When
-        Shape a1 = collector.showFigures(2);
-        Shape a2 = collector.getFigure(2);
+        String a1 = collector.showFigures();
+        Shape[] shapes = {triangle1,triangle2,triangle3};
+        String a2 = Arrays.toString(shapes);
         //Then
         Assertions.assertEquals(a1,a2);
     }
