@@ -1,13 +1,15 @@
 package com.kodilla.testing.weather.stub;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class WeatherForecastTestSuite {
+
     @Test
     void testCalculateForecastWithStub() {
         //Given
-        Temperatures temperatures = new TemperaturesStub(); // !!!
+        Temperatures temperatures = new TemperaturesStub();
         WeatherForecast weatherForecast = new WeatherForecast(temperatures);
 
         //When
@@ -16,4 +18,20 @@ public class WeatherForecastTestSuite {
         //Then
         Assertions.assertEquals(5, quantityOfSensors);
     }
+
+
+    @BeforeEach@Test
+    void testAverageValueForecastWithStub(){
+        //Given
+        Temperatures temperatures = new TemperaturesStub();
+        WeatherForecast weatherForecast = new WeatherForecast(temperatures);
+
+        //When
+        double a1 =weatherForecast.averageValueTemperatures();
+
+        //Then
+        Assertions.assertEquals(5,a1);
+    }
+
+
 }
