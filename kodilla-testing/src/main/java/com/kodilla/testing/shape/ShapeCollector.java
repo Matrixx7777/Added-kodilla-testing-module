@@ -24,9 +24,19 @@ public class ShapeCollector {
 
     }
 
-    public void showFigures(){
+    public Shape showFigure(int a){
 
-        list.size();
+        return list.get(a);
 
+    }
+
+    public Shape showFigures(int a){
+
+            return list.get(a);
+
+    }
+
+    public int getShapestListQuantity(){
+        return list.size();
     }
 }
