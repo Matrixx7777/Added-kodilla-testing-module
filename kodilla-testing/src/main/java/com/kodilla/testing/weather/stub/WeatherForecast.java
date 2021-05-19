@@ -51,7 +51,7 @@ public class WeatherForecast {
         Collections.sort(temperaturesArray);
 
         if(temperaturesArray.size() % 2 == 0){
-            median = (temperaturesArray.get((temperaturesArray.size()/2)-1) + temperaturesArray.get((temperaturesArray.size()/2)-1));
+            median = (temperaturesArray.get((temperaturesArray.size()/2)-1) + temperaturesArray.get((temperaturesArray.size()/2)/2));
         }
         else{
             median = temperaturesArray.get(((temperaturesArray.size()+1)/2)-1);
