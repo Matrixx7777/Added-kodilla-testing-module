@@ -14,6 +14,7 @@ import static org.mockito.Mockito.when;
 public class WeatherForecastTestSuite {
 
     //Mock
+
     @Test
     void testCalculateForecastWithMock() {
         //Given
@@ -29,13 +30,14 @@ public class WeatherForecastTestSuite {
 
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
-
         //When
         int quantityOfSensors = weatherForecast.calculateForecast().size();
 
         //Then
         Assertions.assertEquals(5, quantityOfSensors);
     }
+
+
 
 
 }
