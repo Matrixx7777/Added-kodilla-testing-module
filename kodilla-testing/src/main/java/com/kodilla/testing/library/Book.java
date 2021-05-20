@@ -2,6 +2,7 @@ package com.kodilla.testing.library;
 
 import java.util.Objects;
 
+// .
 public class Book {
     private String title;
     private String author;

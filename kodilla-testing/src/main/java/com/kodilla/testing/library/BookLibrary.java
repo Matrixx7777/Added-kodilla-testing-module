@@ -3,6 +3,8 @@ package com.kodilla.testing.library;
 import java.util.ArrayList;
 import java.util.List;
 
+// .
+
 public class BookLibrary {
     LibraryDatabase libraryDatabase;
 
@@ -19,4 +21,27 @@ public class BookLibrary {
         bookList = resultList;
         return bookList;
     }
+
+    public  List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+
+        List<Book> listBorrowedBooks = new ArrayList<>();
+        List<Book> resultList = libraryDatabase
+                .listBooksInHandsOf(libraryUser);
+        if (resultList.size() == 0) System.out.println(listBorrowedBooks);
+        listBorrowedBooks = resultList;
+
+        List<Book> resultList1 = libraryDatabase
+                .listBooksInHandsOf(libraryUser);
+        if (resultList1.size() == 1) System.out.println(listBorrowedBooks);
+        listBorrowedBooks = resultList;
+
+        List<Book> resultList2 = libraryDatabase
+                .listBooksInHandsOf(libraryUser);
+        if (resultList2.size() == 5) System.out.println(listBorrowedBooks);
+        listBorrowedBooks = resultList;
+        return listBorrowedBooks;
+
+    }
+
+
 }

@@ -7,6 +7,7 @@ public class LibraryUser {
     private String lastname;
     private String peselId;
 
+    // .
     public LibraryUser(String firstname, String lastname, String peselId) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -53,4 +54,9 @@ public class LibraryUser {
     public int hashCode() {
         return Objects.hash(firstname, lastname, peselId);
     }
+
+
+
+
+
 }
