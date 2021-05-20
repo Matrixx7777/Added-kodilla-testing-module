@@ -109,12 +109,13 @@ class BookDirectoryTestSuite {
         when(libraryDatabaseMock.listBooksInHandsOf(user2)).thenReturn(userHasOneBooksBorrowed);
         when(libraryDatabaseMock.listBooksInHandsOf(user3)).thenReturn(userHasFiveBooksBorrowed);
         // When
-        List<Book> theListUserHasZeroBookBorrowed = bookLibrary.listBooksInHandsOf(user1);
-        List<Book> theListUserHasOneBooksBorrowed = bookLibrary.listBooksInHandsOf(user1);
-        List<Book> theListUserHasFiveBooksBorrowed = bookLibrary.listBooksInHandsOf(user1);
+        List<Book> theListUserHasZeroBooksBorrowed = bookLibrary.listBooksInHandsOf(user1);
+        List<Book> theListUserHasOneBooksBorrowed = bookLibrary.listBooksInHandsOf(user2);
+        List<Book> theListUserHasFiveBooksBorrowed = bookLibrary.listBooksInHandsOf(user3);
         // Then
-        assertEquals(0, theListUserHasZeroBookBorrowed.size());
-
+        assertEquals(0, theListUserHasZeroBooksBorrowed.size());
+        assertEquals(1, theListUserHasOneBooksBorrowed.size());
+        assertEquals(5, theListUserHasFiveBooksBorrowed.size());
     }
 
 
