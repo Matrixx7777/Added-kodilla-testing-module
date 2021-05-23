@@ -112,7 +112,9 @@ public class StreamMain {
 
         Map<Integer, ForumUser> listUsers = users.getUserList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> Period.between(LocalDate.now(), forumUser.getBorn()).getYears() <= 2001)
+               .filter(forumUser -> Period.between(LocalDate.now(), forumUser.getBorn()).getYears() <= 2001)
+                .filter(forumUser -> Period.between(LocalDate.now(), forumUser.getBorn()).getMonths() <= 5)
+                .filter(forumUser -> Period.between(LocalDate.now(), forumUser.getBorn()).getDays() <= 23)
 //                .filter(forumUser -> forumUser.getBorn().getYear() > 2001)
                 .filter(forumUser -> forumUser.getNumberOfPost() <= 1)
                 .collect(Collectors.toMap(ForumUser::getId, forumUser -> forumUser));
