@@ -24,20 +24,8 @@ public class BookLibrary {
 
     public  List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
 
-        List<Book> listBorrowedBooks = new ArrayList<>();
-        List<Book> resultList = libraryDatabase
+        return libraryDatabase
                 .listBooksInHandsOf(libraryUser);
-        if (resultList.size() == 0) System.out.println(listBorrowedBooks);
-
-        List<Book> resultList1 = libraryDatabase
-                .listBooksInHandsOf(libraryUser);
-        if (resultList1.size() == 1) System.out.println(listBorrowedBooks);
-
-        List<Book> resultList2 = libraryDatabase
-                .listBooksInHandsOf(libraryUser);
-        if (resultList2.size() == 5) System.out.println(listBorrowedBooks);
-
-        return libraryDatabase.listBooksInHandsOf(libraryUser);
 
     }
 
