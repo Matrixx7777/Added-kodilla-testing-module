@@ -8,6 +8,14 @@ public final class Continent {
    private final String continent;
    private final Set<Country> countriesOfTheContinent = new HashSet<>();
 
+    public void addCountry (Country country) {
+        countriesOfTheContinent.add(country);
+    }
+
+    public void removeCountry(Country country) {
+        countriesOfTheContinent.remove(country);
+    }
+
    public Continent(final String continent ){this.continent = continent;}
 
     public String getContinent() {

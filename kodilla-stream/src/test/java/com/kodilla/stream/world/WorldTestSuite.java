@@ -23,21 +23,20 @@ public class WorldTestSuite {
         Country country8 = new Country("China",  1398000000);
         Country country9 = new Country("Japan", 126000000);
 
-
-        Continent europe = new Continent("Europe: ");
-        europe.equals(country1);
-        europe.equals(country2);
-        europe.equals(country3);
+        Continent europe = new Continent("Europe");
+        europe.addCountry(country1);
+        europe.addCountry(country2);
+        europe.addCountry(country3);
 
         Continent northAmerica = new Continent("North America: ");
-        northAmerica.equals(country4);
-        northAmerica.equals(country5);
-        northAmerica.equals(country6);
+        northAmerica.addCountry(country4);
+        northAmerica.addCountry(country5);
+        northAmerica.addCountry(country6);
 
         Continent asia = new Continent("Asia: ");
-        asia.equals(country7);
-        asia.equals(country8);
-        asia.equals(country9);
+        asia.addCountry(country7);
+        asia.addCountry(country8);
+        asia.addCountry(country9);
 
         World world = new World();
         world.addContinent(europe);
