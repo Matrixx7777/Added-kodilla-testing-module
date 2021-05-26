@@ -30,4 +30,5 @@ public final class Continent {
     Continent continentEquals = (Continent) o;
     return  continent.equals(continentEquals.continent);
     }
+
 }

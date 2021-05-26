@@ -13,16 +13,16 @@ public World(){continentsOfTheWorld = new HashSet<>();}
     public Set<Continent> getContinentsOfTheWorld() {
         return continentsOfTheWorld;
     }
-
     public void addContinent(Continent continent){
     continentsOfTheWorld.add(continent);
 }
 
-public void removeContinent(Continent continent){
+    public void removeContinent(Continent continent){
     continentsOfTheWorld.remove(continent);
 }
 
 public BigDecimal getPeopleQuantity(){
+
 return getContinentsOfTheWorld().stream()
         .flatMap(continent -> continent.getCountries().stream())
         .map(Country::getPopulation)
