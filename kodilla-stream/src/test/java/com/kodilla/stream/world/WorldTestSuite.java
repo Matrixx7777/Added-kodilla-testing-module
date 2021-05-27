@@ -47,8 +47,8 @@ public class WorldTestSuite {
         BigDecimal totalSumPeople = world.getPeopleQuantity();
 
         //Then
-        BigDecimal TheResultOfThePeopleInTheWorld = new BigDecimal(2347650000L);
-        assertEquals(TheResultOfThePeopleInTheWorld, totalSumPeople);
+        BigDecimal theResultOfThePeopleInTheWorld = new BigDecimal(2347650000L);
+        assertEquals(theResultOfThePeopleInTheWorld, totalSumPeople);
 
     }
 }
