@@ -86,21 +86,21 @@ class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        List<TaskList> taskListToDo = Arrays.asList(new TaskList("To do"));
+        List<TaskList> taskListInProgress = Arrays.asList(new TaskList("In progress"));
 
         // OR
         //        List<TaskList> inProgressTasks = new ArrayList<>();
         //        inProgressTasks.add(new TaskList("In progress"));
 
         double a1 = project.getTaskLists().stream()
-                .filter(taskListToDo::contains)
+                .filter(taskListInProgress::contains)
                 .flatMap(n -> n.getTasks().stream())
                 .mapToLong(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
                 .average()
                 .orElse(0);
         //Then
 
-        assertEquals(20.0, a1 );
+        assertEquals(10.0, a1 );
 
     }
 
