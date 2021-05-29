@@ -3,7 +3,9 @@ package com.kodilla.stream.portfolio;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -82,8 +84,23 @@ class BoardTestSuite {
     void testAddTaskListAverageWorkingOnTask(){
         //Given
         Board project = prepareTestData();
+
         //When
-        List<TaskList> list = new ArrayList<>();
+        List<TaskList> taskListToDo = Arrays.asList(new TaskList("To do"));
+
+        // OR
+        //        List<TaskList> inProgressTasks = new ArrayList<>();
+        //        inProgressTasks.add(new TaskList("In progress"));
+
+        double a1 = project.getTaskLists().stream()
+                .filter(taskListToDo::contains)
+                .flatMap(n -> n.getTasks().stream())
+                .mapToLong(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
+                .average()
+                .orElse(0);
+        //Then
+
+        assertEquals(20.0, a1 );
 
     }
 
