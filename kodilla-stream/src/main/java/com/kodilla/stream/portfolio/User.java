@@ -1,7 +1,7 @@
 package com.kodilla.stream.portfolio;
 
 public final class User {
-
+//
     private final String username;
     private final String realName;
 

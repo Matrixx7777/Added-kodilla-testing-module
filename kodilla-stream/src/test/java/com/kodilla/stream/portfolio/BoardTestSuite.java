@@ -79,7 +79,7 @@ class BoardTestSuite {
         //Then
         assertEquals(2, longTasks);
     }
-
+//
     @Test
     void testAddTaskListAverageWorkingOnTask(){
         //Given
