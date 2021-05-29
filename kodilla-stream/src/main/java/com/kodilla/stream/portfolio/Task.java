@@ -1,7 +1,7 @@
 package com.kodilla.stream.portfolio;
 
 import java.time.LocalDate;
-//
+
 public final class Task {
 
     private final String title;
