@@ -1,18 +1,47 @@
 package com.kodilla.exception.io;
 
+import com.kodilla.exception.test.SecondChallenge;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 public class ExceptionHandling {
-    public static void main(String[] args){
 
+    @Test
+    void testProbablyIWillThrowException(){
+        //Given
         SecondChallenge secondChallenge = new SecondChallenge();
+        //When & Then
+        assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1.5,7.5));
 
-        try{
-            System.out.println("probablyIWillThrowException result = " + secondChallenge.probablyIWillThrowException(2.0,3.0));
-        }
-        catch (Exception e) {
-            System.out.println("Don't probablyIWillThrowException \n Error occurred" + e);
-        }
-        finally {
-                System.out.println("Done !");
-        }
     }
+
+    @Test
+    void testIfXIsLessThanOneAndBiggerThanTwoOrEqualsTwoWithYEqualsOneAndHalf(){
+        //Given
+        SecondChallenge secondChallenge = new SecondChallenge();
+        //When & Then
+        assertAll(
+                () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(-7,1.5)),
+                () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(6,1.5)),
+                () -> assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(2,1.5))
+        );
+    }
+
+    @Test
+    void testIfXAndYEqualsZero(){
+        //Given
+        SecondChallenge secondChallenge = new SecondChallenge();
+        //When & Then
+        assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(0.0,0.0));
+
+    }
+
+
+
+
+
+
+
+
 }
