@@ -7,11 +7,11 @@ public class FindingAllFlights {
 
     public static void main(String[] args){
 
-        Flight a1 = new Flight("Moscow","Roma");
+        Flight flight = new Flight("Madrit","Tokyo");
 
         try{
             FindingAllFlights b1 = new FindingAllFlights();
-            b1.findFilght(a1);
+            b1.findFlight(flight);
         }
         catch (RouteNotFoundException e){
             System.out.println(e.getMessage());
@@ -19,10 +19,9 @@ public class FindingAllFlights {
         finally {
             System.out.println("We welcome to again");
         }
-
     }
 
-    public void findFilght(Flight flight) throws RouteNotFoundException{
+    public void findFlight(Flight flight) throws RouteNotFoundException{
 
         Map<String, Boolean> mapFlights = new HashMap<>();
         mapFlights.put("Berlin", true);
@@ -33,7 +32,7 @@ public class FindingAllFlights {
         mapFlights.put("London", false);
         mapFlights.put("Madrit", true);
         mapFlights.put("Bangkok", false);
-        mapFlights.put("Washingoton", true);
+        mapFlights.put("Washington", true);
         mapFlights.put("Tokyo", true);
         mapFlights.put("Maroco", false);
 
