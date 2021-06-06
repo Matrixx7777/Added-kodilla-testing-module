@@ -7,7 +7,7 @@ public class FindingAllFlights {
 
     public static void main(String[] args){
 
-        Flight flight = new Flight("Madrit","Tokyo");
+        Flight flight = new Flight("Moscow","Tokyo");
 
         try{
             FindingAllFlights b1 = new FindingAllFlights();
