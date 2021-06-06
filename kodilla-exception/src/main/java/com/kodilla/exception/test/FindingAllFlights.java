@@ -37,7 +37,7 @@ public class FindingAllFlights {
         mapFlights.put("Maroco", false);
 
         for(Map.Entry<String,Boolean> map: mapFlights.entrySet()) {
-            if (map.getValue().equals(flight.getDepartureAirport())){
+            if (map.getKey().equals(flight.getDepartureAirport())){
                 if(map.getValue()){
                     System.out.println("Flight is available with " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport());
                 }
