@@ -52,7 +52,7 @@ public class ForumStatistics {
         }
 
         if (statistics.postCount() != 0) {
-            commentsOfPost = statistics.commentCount() / statistics.postCount();
+            commentsOfPost = (double)statistics.commentCount() / (double)statistics.postCount();
         } else {
             commentsOfPost = 0;
         }
