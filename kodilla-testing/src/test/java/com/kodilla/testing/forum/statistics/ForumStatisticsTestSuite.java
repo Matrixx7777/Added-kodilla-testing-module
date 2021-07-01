@@ -66,7 +66,7 @@ public class ForumStatisticsTestSuite {
         users.add("Renia");
         users.add("Ania");
         int posts = 1000;
-        int comments = 0;
+        int comments = 250;
 
         when(statisticsMock.userNames()).thenReturn(users);
         when(statisticsMock.postCount()).thenReturn(posts);
@@ -78,9 +78,9 @@ public class ForumStatisticsTestSuite {
         //Then
         Assertions.assertEquals(4,forumStatistics.getUsers());
         Assertions.assertEquals(1000,forumStatistics.getPosts());
-        Assertions.assertEquals(0,forumStatistics.getComments());
+        Assertions.assertEquals(250,forumStatistics.getComments());
         Assertions.assertEquals(250,forumStatistics.getPostsPerUser());
-        Assertions.assertEquals(0,forumStatistics.getCommentsPerUser());
+        Assertions.assertEquals(62.0,forumStatistics.getCommentsPerUser(), 000);
         Assertions.assertEquals(0,forumStatistics.getCommentsPerPost());
     }
 
@@ -141,7 +141,7 @@ public class ForumStatisticsTestSuite {
         List<String> users = new ArrayList<>();
         users.add("Julia");
         users.add("Aleksandra");
-        int posts = 10;
+        int posts = 7;
         int comments = 20;
 
         when(statisticsMock.userNames()).thenReturn(users);
@@ -153,11 +153,11 @@ public class ForumStatisticsTestSuite {
 
         //Then
         Assertions.assertEquals(2, forumStatistics.getUsers());
-        Assertions.assertEquals(10, forumStatistics.getPosts());
+        Assertions.assertEquals(7, forumStatistics.getPosts());
         Assertions.assertEquals(20, forumStatistics.getComments());
-        Assertions.assertEquals(5, forumStatistics.getPostsPerUser());
+        Assertions.assertEquals(3.0, forumStatistics.getPostsPerUser(),000);
         Assertions.assertEquals(10, forumStatistics.getCommentsPerUser());
-        Assertions.assertEquals(2, forumStatistics.getCommentsPerPost());
+        Assertions.assertEquals(2.0, forumStatistics.getCommentsPerPost(),000);
     }
 
     @Test
