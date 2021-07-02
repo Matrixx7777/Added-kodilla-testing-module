@@ -44,8 +44,8 @@ public class ForumStatistics {
         comments = statistics.commentCount();
 
         if (statistics.userNames().size() != 0) {
-            postsOfUser = statistics.postCount() / statistics.userNames().size();
-           commentsOfUser = statistics.commentCount() / statistics.userNames().size();
+            postsOfUser = (double)statistics.postCount() / (double)statistics.userNames().size();
+           commentsOfUser = (double)statistics.commentCount() / (double)statistics.userNames().size();
         } else {
             postsOfUser = 0;
             commentsOfUser =0;
