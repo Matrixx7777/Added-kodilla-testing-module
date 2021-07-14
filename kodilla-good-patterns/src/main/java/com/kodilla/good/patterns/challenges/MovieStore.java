@@ -33,11 +33,5 @@ class MovieStore {
         MovieStore store = new MovieStore();
         store.getMovies().entrySet().stream()
                 .forEach(System.out::println);
-
-
-
-
-
-
     }
 }
