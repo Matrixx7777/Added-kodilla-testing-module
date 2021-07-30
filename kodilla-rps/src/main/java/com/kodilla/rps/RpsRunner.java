@@ -12,7 +12,7 @@ public class RpsRunner {
         int userScore = 0;
         int counter = 0;
 
-        System.out.println("/ROCK|PAPER|SCISSORS/\n" +
+        System.out.println("|ROCK|PAPER|SCISSORS|\n" +
                 "Hello what's your name ?");
         String name = scanner.nextLine();
 
