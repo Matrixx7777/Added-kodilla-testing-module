@@ -20,7 +20,7 @@ public class RpsRunner {
 
             int computerChoice = 1 + random.nextInt(3);
 
-            System.out.println("Hello " + name + "\nEnter -> 1 for rock | 2 for paper | 3 for scissors");
+            System.out.println("\nHello " + name + "\nEnter -> 1 for rock | 2 for paper | 3 for scissors");
             int playerChoice = scanner.nextInt();
 
             if(playerChoice == computerChoice){
