@@ -93,7 +93,6 @@ public class RpsRunner {
                                 "Computer has: " + computerScore + " points");
                     }
 
-
                 } else if (playerChoice == 3) {
 
                     if (computerChoice == 1) {
