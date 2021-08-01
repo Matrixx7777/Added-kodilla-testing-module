@@ -130,6 +130,7 @@ public class RpsRunner {
                     if (answer.equals("N")) {
                         counter = 0;
                         start = false;
+                        end = true;
 
                     } else if (answer.equals("X")) {
                         System.out.println("End of the game");
