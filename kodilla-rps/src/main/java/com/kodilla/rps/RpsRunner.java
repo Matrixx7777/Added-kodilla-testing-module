@@ -135,6 +135,7 @@ public class RpsRunner {
                         System.out.println("End of the game");
                         end = false;
                         start = false;
+
                     } else {
                         System.out.println("End of the game");
                         end = false;
