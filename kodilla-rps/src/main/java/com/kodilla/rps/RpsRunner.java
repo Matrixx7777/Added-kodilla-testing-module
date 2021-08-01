@@ -15,8 +15,10 @@ public class RpsRunner {
             Scanner scanner = new Scanner(System.in);
             Random random = new Random();
 
-            System.out.println("\n|ROCK|PAPER|SCISSORS|\n" +
-                    "Hello what's your name ?");
+            System.out.println("""
+
+                    |ROCK|PAPER|SCISSORS|
+                    Hello what's your name ?""");
             String name = scanner.nextLine();
 
             System.out.println("To how many points do you want to play ?");
@@ -46,7 +48,7 @@ public class RpsRunner {
                                 name + " You lost this round\n" +
                                 "Computer: " + computerScore + "\n" +
                                 name + ": " + userScore);
-                    } else if (computerChoice == 3) {
+                    } else {
                         userScore++;
                         System.out.println("Computer selected scissors\n" +
                                 name + " You won this round\n" +
@@ -72,7 +74,7 @@ public class RpsRunner {
                                 name + " You won this round\n" +
                                 "Computer: " + computerScore + "\n" +
                                 name + ": " + userScore);
-                    } else if (computerChoice == 3) {
+                    } else {
                         computerScore++;
                         System.out.println("Computer selected scissors\n" +
                                 name + " You lost this round\n" +
@@ -99,7 +101,7 @@ public class RpsRunner {
                                 name + " You lost this round\n" +
                                 "Computer: " + computerScore + "\n" +
                                 name + ": " + userScore);
-                    } else if (computerChoice == 2) {
+                    } else {
                         userScore++;
                         System.out.println("Computer selected paper\n" +
                                 name + " You won this round" + '\n' +
@@ -121,8 +123,10 @@ public class RpsRunner {
                 }
 
                 if(computerScore == points || userScore == points ){
-                    System.out.println("\nDo you want to play again ?\n" +
-                        "Enter -> N -> YES ||| Enter -> X -> NO ");
+                    System.out.println("""
+
+                            Do you want to play again ?
+                            Enter -> N -> YES ||| Enter -> X -> NO\s""");
                     String answer = scanner.next().toUpperCase();
                     if (answer.equals("N")) {
                         counter = 0;
