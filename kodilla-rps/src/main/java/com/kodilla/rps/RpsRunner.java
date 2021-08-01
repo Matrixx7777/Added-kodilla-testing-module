@@ -7,8 +7,6 @@ public class RpsRunner {
 
     public static void main(String[] args) {
 
-        int computerScore = 0;
-        int userScore = 0;
         int counter = 0;
         boolean end = true;
 
@@ -24,10 +22,10 @@ public class RpsRunner {
             System.out.println("To how many points do you want to play ?");
             int points = scanner.nextInt();
 
-            boolean start = true;
+            int computerScore = 0;
+            int userScore = 0;
 
-            computerScore = 0;
-            userScore = 0;
+            boolean start = true;
 
             while (counter == 0 && start) {
 
