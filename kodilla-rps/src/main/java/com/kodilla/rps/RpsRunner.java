@@ -16,7 +16,6 @@ public class RpsRunner {
             Random random = new Random();
 
             System.out.println("""
-
                     |ROCK|PAPER|SCISSORS|
                     Hello what's your name ?""");
             String name = scanner.nextLine();
@@ -124,7 +123,6 @@ public class RpsRunner {
 
                 if(computerScore == points || userScore == points ){
                     System.out.println("""
-
                             Do you want to play again ?
                             Enter -> N -> YES ||| Enter -> X -> NO\s""");
                     String answer = scanner.next().toUpperCase();
