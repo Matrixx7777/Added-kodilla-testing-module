@@ -12,6 +12,8 @@ public class RpsRunner {
 
         while (end) {
 
+            boolean start = true;
+
             Scanner scanner = new Scanner(System.in);
             Random random = new Random();
 
@@ -21,12 +23,11 @@ public class RpsRunner {
             String name = scanner.nextLine();
 
             System.out.println("To how many points do you want to play ?");
-            int points = scanner.nextInt();
+
+            int points = Integer.parseInt(scanner.nextLine());
 
             int computerScore = 0;
             int userScore = 0;
-
-            boolean start = true;
 
             while (counter == 0 && start) {
 
