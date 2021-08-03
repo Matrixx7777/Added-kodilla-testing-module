@@ -23,7 +23,6 @@ public class RpsRunner {
             String name = scanner.nextLine();
 
             System.out.println("To how many points do you want to play ?");
-
             int points = Integer.parseInt(scanner.nextLine());
 
             int computerScore = 0;
