@@ -33,13 +33,12 @@ public class RpsRunner {
                 int computerChoice = 1 + random.nextInt(3);
 
                 System.out.println("\nHello " + name + "\nEnter -> 1 for rock | 2 for paper | 3 for scissors");
+                String playerChoice = scanner.nextLine();
 
-                int playerChoice = scanner.nextInt();
-
-                if (playerChoice == computerChoice) {
+                if (playerChoice.equals("1") && computerChoice == 1 ||playerChoice.equals("2") && computerChoice == 2 ||playerChoice.equals("3") && computerChoice == 3) {
                     System.out.println("\nDraw. Computer and you get 0 points");
 
-                } else if (playerChoice == 1) {
+                } else if (playerChoice.equals("1")) {
 
                     if (computerChoice == 2) {
                         computerScore++;
@@ -65,7 +64,7 @@ public class RpsRunner {
                                 "Computer has: " + computerScore + " points");
                     }
 
-                } else if (playerChoice == 2) {
+                } else if (playerChoice.equals("2")) {
 
                     if (computerChoice == 1) {
                         userScore++;
@@ -92,7 +91,7 @@ public class RpsRunner {
                                 "Computer has: " + computerScore + " points");
                     }
 
-                } else if (playerChoice == 3) {
+                } else if (playerChoice.equals("3")) {
 
                     if (computerChoice == 1) {
                         computerScore++;
@@ -117,7 +116,7 @@ public class RpsRunner {
                         System.out.println("\nYou lost the game\n" +
                                 "Computer has: " + computerScore + " points");
                     }
-                } else if (playerChoice != random.nextInt(3)) {
+                } else {
                     System.out.println("\nYou incorrectly enter");
                 }
 
