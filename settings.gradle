@@ -10,4 +10,3 @@ include 'kodilla-patterns'
 include 'kodilla-rps'
 include 'kodilla-jdbc'
 include 'kodilla-hibernate'
-
