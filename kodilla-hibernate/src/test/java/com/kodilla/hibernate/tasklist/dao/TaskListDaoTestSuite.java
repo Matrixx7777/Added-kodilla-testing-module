@@ -1,13 +1,13 @@
 package com.kodilla.hibernate.tasklist.dao;
 
 import com.kodilla.hibernate.tasklist.TaskList;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Optional;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 //@Disabled
@@ -22,16 +22,17 @@ public class TaskListDaoTestSuite {
     void testFindByListName(){
         //Given
         TaskList taskList = new TaskList("Animals",DESCRIPTION);
+        taskListDao.save(taskList);
+        String listName = taskList.getListName();
 
         //When
-        taskListDao.save(taskList);
+        List<TaskList> readTaskList =  taskListDao.findByListName(listName);
 
         //Then
-        int id = taskList.getId();
-        Optional <TaskList> readTaskList =  taskListDao.findById(id);
-        assertTrue(readTaskList.isPresent());
+        assertEquals(1, readTaskList.size());
 
         //CleanUp
+        int id = readTaskList.get(0).getId();
         taskListDao.deleteById(id);
     }
 }

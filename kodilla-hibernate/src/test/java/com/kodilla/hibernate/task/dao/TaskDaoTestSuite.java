@@ -1,18 +1,16 @@
 package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.Task;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-//@Disabled
 class TaskDaoTestSuite {
 
     @Autowired
@@ -48,7 +46,7 @@ class TaskDaoTestSuite {
         List<Task> readTasks = taskDao.findByDuration(duration);
 
         //Then
-        assertEquals(1, readTasks.size());
+        assertEquals(5, readTasks.size());
 
         //CleanUp
         //int id = readTasks.get(0).getId();
