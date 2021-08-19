@@ -38,4 +38,16 @@ public final class TaskList {
     public String getDescription() {
         return description;
     }
+
+    private void setId(int id){
+        this.id = id;
+    }
+
+    private void setListName(String listName){
+        this.listName = listName;
+    }
+
+    private void setDescription(String description){
+        this.description = description;
+    }
 }
