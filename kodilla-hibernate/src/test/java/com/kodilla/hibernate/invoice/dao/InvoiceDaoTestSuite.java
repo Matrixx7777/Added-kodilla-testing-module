@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.invoice.dao;
 
-import com.kodilla.hibernate.invoice.Inovice;
+import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
 import org.junit.jupiter.api.Test;
@@ -17,12 +17,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class InvoiceDaoTestSuite {
 
     @Autowired
-    private InoviceDao inoviceDao;
+    private InvoiceDao invoiceDao;
 
     @Test
     void testInvoiceDaoSave(){
         //Given
-        Inovice inovice = new Inovice(21312);
+        Invoice invoice = new Invoice(21312);
 
         Item item1 = new Item(new Product("Computer-samsung"), new BigDecimal(4000), 1, new BigDecimal(4000));
         Item item2 = new Item(new Product("Computer-lenovo"), new BigDecimal(2500), 3, new BigDecimal(3000));
@@ -36,14 +36,14 @@ public class InvoiceDaoTestSuite {
         itemList.add(item4);
 
         //When
-        inoviceDao.save(inovice);
-        int id = inovice.getId();
+        invoiceDao.save(invoice);
+        int id = invoice.getId();
 
         //Then
         assertEquals(4, itemList.size());
 
         //CleanUp
-        inoviceDao.deleteById(id);
+        invoiceDao.deleteById(id);
 
     }
 }

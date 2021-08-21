@@ -1,23 +1,21 @@
 package com.kodilla.hibernate.invoice;
 
-import org.springframework.stereotype.Repository;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Repository
-public class Inovice {
+@Table(name  = "INVOICE")
+public class Invoice {
 
     private int id;
     private int number;
     private List<Item> item = new ArrayList<>();
 
-    public Inovice(){}
+    public Invoice(){}
 
-    public Inovice(int number){
+    public Invoice(int number){
         this.number = number;
     }
 
@@ -33,7 +31,6 @@ public class Inovice {
         this.id = id;
     }
 
-    @NotNull
     @Column(name = "NUMBER")
     public int getNumber() {
         return number;
@@ -43,7 +40,7 @@ public class Inovice {
         this.number = number;
     }
 
-    @OneToMany(targetEntity = Item.class, mappedBy = "inovice")
+    @OneToMany(targetEntity = Item.class, mappedBy = "invoice")
     public List<Item> getItem() {
         return item;
     }

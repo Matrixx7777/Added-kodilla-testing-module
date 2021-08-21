@@ -13,7 +13,7 @@ public class Item {
     private int quantity;
     private BigDecimal value;
     private Product product;
-    private Inovice inovice;
+    private Invoice invoice;
 
 
     public Item(){}
@@ -76,12 +76,12 @@ public class Item {
     }
 
     @ManyToOne
-    @JoinColumn(name = "INOVICE_ID")
-    public Inovice getInovice() {
-        return inovice;
+    @JoinColumn(name = "INVOICE_ID")
+    public Invoice getInvoice() {
+        return invoice;
     }
 
-    public void setInovice(Inovice inovice) {
-        this.inovice = inovice;
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
     }
 }
