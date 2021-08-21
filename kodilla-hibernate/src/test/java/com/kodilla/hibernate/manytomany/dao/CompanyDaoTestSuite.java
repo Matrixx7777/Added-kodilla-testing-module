@@ -6,7 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
 class CompanyDaoTestSuite {
@@ -58,5 +61,45 @@ class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+    }
+
+    @Autowired
+    private EmployeeDao employeeDao;
+
+    @Test
+    void testCompaniesAndEmployees(){
+        //Given
+        Employee dawid = new Employee("Dawid", "Kocik");
+        Employee ania = new Employee("Ania", "Płatek");
+        Employee ola = new Employee("Ola", "Będowska");
+
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        //When
+        softwareMachine.getEmployees().add(dawid);
+        dataMaesters.getEmployees().add(ania);
+        greyMatter.getEmployees().add(ola);
+
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+
+        List<Employee> retrieveLastNameOfEmployee = employeeDao.retrieveLastNameOfEmployee("Kocik");
+        List<Employee> findEmployeeByPartialName = employeeDao.findEmployeeByPartialName("Płatek");
+
+        List<Company> retrievePartialNameOfCompany = companyDao.retrievePartialNameOfCompany("Grey Matter");
+        List<Company> findCompanyByPartialName = companyDao.findCompanyByPartialName("Software Machine");
+
+        //Then
+        assertNotEquals(0, retrieveLastNameOfEmployee.size());
+        assertEquals(1, findEmployeeByPartialName.size());
+        assertNotEquals(0, retrievePartialNameOfCompany.size());
+        assertEquals(1, findCompanyByPartialName.size());
+
+        //CleanUp
+        companyDao.deleteAll();
+        employeeDao.deleteAll();
     }
 }

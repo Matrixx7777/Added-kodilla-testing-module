@@ -5,6 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQueries({
+        @NamedQuery(
+                name = "Company.retrievePartialNameOfCompany",
+                query = "FROM Company WHERE name =: NAME"
+        ),
+        @NamedQuery(
+                name = "Company.findCompanyByPartialName",
+                query = "FROM Company WHERE name like concat('-',:NAME,'-') "
+        ),
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
