@@ -40,7 +40,10 @@ public final class Product {
         this.name = name;
     }
 
-    @OneToMany(targetEntity = Item.class, mappedBy = "product")
+    @OneToMany(targetEntity = Item.class,
+            mappedBy = "product",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
     public List<Item> getItem() {
         return item;
     }

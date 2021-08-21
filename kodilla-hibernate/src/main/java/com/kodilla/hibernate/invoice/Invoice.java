@@ -40,7 +40,12 @@ public class Invoice {
         this.number = number;
     }
 
-    @OneToMany(targetEntity = Item.class, mappedBy = "invoice")
+    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "invoice",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     public List<Item> getItem() {
         return item;
     }
