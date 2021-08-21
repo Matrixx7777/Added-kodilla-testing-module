@@ -40,7 +40,7 @@ public class InvoiceDaoTestSuite {
         int id = invoice.getId();
 
         //Then
-        assertEquals(4, itemList.size());
+        assertNotEquals(0, id);
 
         //CleanUp
         invoiceDao.deleteById(id);
