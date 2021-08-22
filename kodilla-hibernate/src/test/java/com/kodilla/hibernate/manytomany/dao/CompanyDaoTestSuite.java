@@ -69,6 +69,9 @@ class CompanyDaoTestSuite {
     @Test
     void testCompaniesAndEmployees(){
         //Given
+        companyDao.deleteAll();
+        employeeDao.deleteAll();
+
         Employee dawid = new Employee("Dawid", "Kocik");
         Employee ania = new Employee("Ania", "Płatek");
         Employee ola = new Employee("Ola", "Będowska");
@@ -86,17 +89,17 @@ class CompanyDaoTestSuite {
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
 
-        List<Employee> retrieveLastNameOfEmployee = employeeDao.retrieveLastNameOfEmployee("Kocik");
+        List<Employee> retrieveLastNameOfEmployee = employeeDao.retrieveLastNameOfEmployee("Dawid");
         List<Employee> findEmployeeByPartialName = employeeDao.findEmployeeByPartialName("Płatek");
 
-        List<Company> retrievePartialNameOfCompany = companyDao.retrievePartialNameOfCompany("Grey Matter");
+        List<Company> retrievePartialNameOfCompany = companyDao.retrievePartialNameOfCompany("Data Maesters");
         List<Company> findCompanyByPartialName = companyDao.findCompanyByPartialName("Software Machine");
 
         //Then
-        assertNotEquals(0, retrieveLastNameOfEmployee.size());
-        assertEquals(1, findEmployeeByPartialName.size());
-        assertNotEquals(0, retrievePartialNameOfCompany.size());
-        assertEquals(1, findCompanyByPartialName.size());
+        assertEquals(0, retrieveLastNameOfEmployee.size());
+        assertEquals(0, findEmployeeByPartialName.size());
+        assertEquals(1, retrievePartialNameOfCompany.size());
+        assertEquals(0, findCompanyByPartialName.size());
 
         //CleanUp
         companyDao.deleteAll();
