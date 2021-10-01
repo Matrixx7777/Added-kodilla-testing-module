@@ -12,7 +12,7 @@ import java.util.List;
         ),
         @NamedQuery(
                 name = "Company.findCompanyByPartialName",
-                query = "FROM Company WHERE name like concat('-',:NAME,'-') "
+                query = "FROM Company WHERE name like concat ('%',:NAME,'%')"
         ),
 })
 @Entity

@@ -48,7 +48,6 @@ public class SCAETestSuite {
 
         //Clean up
         companyDao.deleteAll();
-
     }
 
     @Test
