@@ -1,18 +1,21 @@
 package com.kodilla.patterns2.facade.api;
 
+import com.kodilla.patterns2.facade.Order;
 import com.kodilla.patterns2.facade.ShopService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 @Service
+@EnableAspectJAutoProxy
 public class OrderFacade {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderFacade.class);
-    private final ShopService shopService;
+    private ShopService shopService;
 
     @Autowired
     public OrderFacade(ShopService shopService) {
@@ -59,5 +62,16 @@ public class OrderFacade {
                 shopService.cancelOrder(orderId);
             }
         }
+    }
+
+    public void factorialOrder(Order order) {
+        if(order.getOrderId() != null){
+            LOGGER.info("Order has ID");
+            if(order.getItems() != null){
+                LOGGER.info("Order has item");
+            }else {
+                LOGGER.info("Order Item doesn't not exist"); }
+        }
+        else{ LOGGER.info("Order ID doesn't exist"); }
     }
 }
