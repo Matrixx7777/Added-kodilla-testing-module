@@ -5,7 +5,7 @@ public class Workers {
             {"67032906720", "John", "Smith"},
             {"62081612187", "Ivone", "Novak"},
             {"75021310799", "Jessie", "Pinkman"},
-            {"75012200766", "Walter', White"},
+            {"75012200766", "Walter", "White"},
             {"75073006831", "Clara", "Lanson"}};
 
     private double[] salaries = {

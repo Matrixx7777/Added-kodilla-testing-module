@@ -1,6 +1,7 @@
 package com.kodilla.patterns2.adapter.company.newhrsystem;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Employee {
     final private String peselId;
@@ -38,8 +39,7 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-//        return Objects.equals(peselId, employee.peselId);
-        return peselId != null ? peselId.equals(employee.peselId) : employee.peselId == null;
+        return Objects.equals(peselId, employee.peselId);
     }
 
     @Override
