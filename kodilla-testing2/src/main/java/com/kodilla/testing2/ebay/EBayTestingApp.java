@@ -7,13 +7,14 @@ import org.openqa.selenium.WebElement;
 
 public class EBayTestingApp {
 
-    public static final String SEARCHFIELD = "q";
+    public static final String LAPTOP = "_nkw";
 
     public static void main(String[] args) {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
-        driver.get("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=Laptop&_sacat=0");
+        assert driver != null;
+        driver.get("https://www.ebay.com/");
 
-        WebElement searchField = driver.findElement(By.name(SEARCHFIELD));
+        WebElement searchField = driver.findElement(By.name(LAPTOP));
         searchField.sendKeys("Laptop");
         searchField.submit();
     }

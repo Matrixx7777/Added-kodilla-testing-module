@@ -11,6 +11,7 @@ public class GoogleTestingApp {
 
     public static void main(String[] args) {
         WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
+        assert driver != null;
         driver.get("https://www.google.com");
 
         WebElement searchField = driver.findElement(By.name(SEARCHFIELD));
