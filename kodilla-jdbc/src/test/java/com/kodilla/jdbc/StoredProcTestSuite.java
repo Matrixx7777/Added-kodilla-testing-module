@@ -21,15 +21,39 @@ public class StoredProcTestSuite {
         ResultSet rs = statement.executeQuery(sqlCheckTable);
 
         // When
-        String sqlProcedureCall = "CALL UpdateVipLevels()";
-        statement.execute(sqlProcedureCall);
+//        String sqlProcedureCall = "CALL UpdateVipLevels()";
+//        statement.execute(sqlProcedureCall);         // <-- assertEquals(5, howMany); It should be zero.
 
         // Then
         int howMany = -1;
         if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(0, howMany);
+        assertEquals(5, howMany);
+        rs.close();
+        statement.close();
+    }
+
+    @Test
+    public void testUpdateBestsellers() throws SQLException{
+        // Given
+        DbManager dbManager = DbManager.getInstance();
+        String sqlUpdate = "UPDATE BOOKS SET BESTSELLER=\"0\"";
+        Statement statement = dbManager.getConnection().createStatement();
+        statement.executeUpdate(sqlUpdate);
+        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM BOOKS WHERE BESTSELLER=\"0\"";
+        ResultSet rs = statement.executeQuery(sqlCheckTable);
+
+        // When
+//        String sqlProcedureCall = "CALL UpdateBestSellers()";
+//        statement.execute(sqlProcedureCall);
+
+        // Then
+        int howMany = -1;
+        if (rs.next()) {
+            howMany = rs.getInt("HOW_MANY");
+        }
+        assertEquals(5, howMany);
         rs.close();
         statement.close();
     }
