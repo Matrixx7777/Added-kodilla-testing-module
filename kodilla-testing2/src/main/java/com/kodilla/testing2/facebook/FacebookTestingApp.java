@@ -47,16 +47,19 @@ public class FacebookTestingApp {
         Thread.sleep(2000L);
 
         WebElement surnameTextField = driver.findElement(By.xpath(SELECT_SURNAME));
+        surnameTextField.click();
         surnameTextField.sendKeys("Kocik");
 
         Thread.sleep(2000L);
 
         WebElement phoneNumberField = driver.findElement(By.xpath(SELECT_PHONE_NUMBERS));
+        phoneNumberField.click();
         phoneNumberField.sendKeys("909090901");
 
         Thread.sleep(2000L);
 
         WebElement passTextField = driver.findElement(By.xpath(SELECT_PASSWORD));
+        passTextField.click();
         passTextField.sendKeys("MyPassword");
 
         Thread.sleep(2000L);
@@ -65,13 +68,9 @@ public class FacebookTestingApp {
         Select selectBoardDay = new Select(selectComboDay);
         selectBoardDay.selectByIndex(17);
 
-        Thread.sleep(1000L);
-
         WebElement selectComboMonth = driver.findElement(By.xpath(SELECT_BIRTHDAY_MONTH));
         Select selectBoardMonth = new Select(selectComboMonth);
         selectBoardMonth.selectByIndex(5);
-
-        Thread.sleep(1000L);
 
         WebElement selectComboYear = driver.findElement(By.xpath(SELECT_BIRTHDAY_YEAR));
         Select selectBoardYear = new Select(selectComboYear);
