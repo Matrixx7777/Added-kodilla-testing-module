@@ -14,7 +14,7 @@ public class FacebookTestingApp {
     public static final String SELECT_SURNAME = "//*[@id=\"u_8_d_Hh\"]";
     public static final String SELECT_PHONE_NUMBERS = "//*[@id=\"u_8_g_pT\"]";
     public static final String SELECT_PASSWORD = "//*[@id=\"password_step_input\"]";
-    public static final String SELECT_BIRTHDAY_DAY = "//*[@id=\"day\"]";
+    public static final String SELECT_BIRTHDAY_DAY = "//*select[@id=\"day\"]";
     public static final String SELECT_BIRTHDAY_MONTH = "//*[@id=\"month\"]";
     public static final String SELECT_BIRTHDAY_YEAR = "//*[@id=\"year\"]";
 
